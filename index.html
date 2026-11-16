@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RCJNSW committee calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #f3f5f8;
+        color: #1f2933;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .card {
+        width: min(100%, 460px);
+        padding: 32px 28px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        text-align: center;
+      }
+
+      .avatar {
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
+      }
+
+      h1 {
+        margin: 20px 0 8px;
+        font-size: 1.6rem;
+      }
+
+      .intro {
+        margin: 24px 0;
+        color: #52606d;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 12px 20px;
+        background: #1f6feb;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .button:hover,
+      .button:focus {
+        background: #1557b0;
+      }
+
+      .copy {
+        margin-top: 24px;
+        text-align: left;
+      }
+
+      .copy-note {
+        margin: 0 0 12px;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: #52606d;
+      }
+
+      .copy-note a {
+        color: #1f6feb;
+      }
+
+      .copy-row {
+        display: flex;
+        gap: 8px;
+      }
+
+      .copy-row input {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        background: #f8fafc;
+        color: #334155;
+        font: inherit;
+        font-size: 0.875rem;
+      }
+
+      .copy-row button {
+        padding: 10px 14px;
+        border: 1px solid #cbd5e1;
+        background: #fff;
+        color: #1f2933;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .copy-row button:hover {
+        background: #f1f5f9;
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          padding: 24px 18px;
+        }
+
+        .copy-row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <img
+        class="avatar"
+        src="https://avatars.githubusercontent.com/u/71072189?s=200&amp;v=4"
+        alt="RCJNSW logo"
+        width="96"
+        height="96"
+      />
+
+      <p class="intro">Subscribe to the RCJNSW Committee calendar.</p>
+
+      <a class="button" href="webcal://rcjnsw.github.io/dates/calendar.ics">
+        Subscribe to calendar
+      </a>
+
+      <div class="copy">
+        <p class="copy-note">
+          Or, copy this link and import into your calendar. Click here for
+          <a
+            href="https://support.microsoft.com/en-us/office/import-or-subscribe-to-a-calendar-in-outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c"
+            target="_blank"
+            rel="noopener"
+            >Microsoft Outlook</a
+          >,
+          <a
+            href="https://support.google.com/calendar/answer/37100?hl=en"
+            target="_blank"
+            rel="noopener"
+            >Google Calendar</a
+          >, or
+          <a
+            href="https://support.apple.com/en-au/guide/calendar/icl1022/11.0/mac/13.0"
+            target="_blank"
+            rel="noopener"
+            >Apple Calendar</a
+          >
+          instructions.
+        </p>
+        <div class="copy-row">
+          <input
+            id="calendar-url"
+            type="text"
+            value="https://rcjnsw.github.io/dates/calendar.ics"
+            aria-label="Calendar URL"
+            readonly
+            onclick="this.select()"
+          />
+          <button id="copy-button" type="button" onclick="copyLink()">
+            Copy
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const calendarUrl = "https://rcjnsw.github.io/dates/calendar.ics";
+
+      async function copyLink() {
+        const button = document.getElementById("copy-button");
+
+        try {
+          await navigator.clipboard.writeText(calendarUrl);
+        } catch {
+          const input = document.getElementById("calendar-url");
+          input.select();
+          document.execCommand("copy");
+        }
+
+        button.textContent = "Copied!";
+        setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>
