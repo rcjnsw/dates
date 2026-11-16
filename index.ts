@@ -5,6 +5,7 @@ type CalendarEvent = (typeof calendar.events)[number];
 const TIMEZONE = calendar.timezone;
 const OUTPUT_PATH = "calendar.ics";
 const PRODID = "-//RCJNSW//Calendar//EN";
+const CALENDAR_NAME = "RCJNSW Dates";
 
 const VTIMEZONE = [
   "BEGIN:VTIMEZONE",
@@ -195,6 +196,8 @@ const lines = [
   `PRODID:${PRODID}`,
   "CALSCALE:GREGORIAN",
   "METHOD:PUBLISH",
+  `NAME:${CALENDAR_NAME}`,
+  `X-WR-CALNAME:${CALENDAR_NAME}`,
   `X-WR-TIMEZONE:${TIMEZONE}`,
   ...VTIMEZONE,
 ];
