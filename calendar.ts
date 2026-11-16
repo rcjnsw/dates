@@ -56,10 +56,25 @@ export const calendar: Calendar = {
     {
       type: "one-off",
       title: "RCJNSW Annual General Meeting",
+      description:
+        "Annual General Meeting for RoboCup Junior NSW. NSW Chair: Karen Binns. Teachers and mentors who have participated as a mentor or volunteer are eligible to attend and vote. Google Meet: https://meet.google.com/wtu-swim-tan",
       location: "Online",
+      url: "https://meet.google.com/wtu-swim-tan",
       schedule: {
-        start: new Date("2026-12-02T00:00:00+11:00"),
-        end: new Date("2026-12-02T23:59:59+11:00"),
+        start: new Date("2026-12-02T20:00:00+11:00"),
+        end: new Date("2026-12-02T20:45:00+11:00"),
+      },
+    },
+    {
+      type: "one-off",
+      title: "RCJNSW Sumo Competition",
+      description:
+        "Arrive at 9:30am. Competitions start at 10:00am and finish at 2:30pm.",
+      location: "Trinity Grammar Preparatory School, Strathfield NSW",
+      url: "https://enter.rcja.app/accounts/login/?next=/events/368",
+      schedule: {
+        start: new Date("2026-11-18T09:30:00+11:00"),
+        end: new Date("2026-11-18T14:30:00+11:00"),
       },
     },
     {
