@@ -55,6 +55,18 @@ export const calendar: Calendar = {
     },
     {
       type: "one-off",
+      title: "RCJA Soccer Technical Committee Meeting",
+      description:
+        "RCJA Soccer Technical Committee meeting to go through the proposed changes for the 2027 RoboCup Junior Australia Soccer rules. The list of proposed rules will be circulated beforehand; message Marc to add anything you'd like included.\n\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/483894205755905?p=pJEGqQdTNuEBaYTXes\nMeeting ID: 483 894 205 755 905\nPasscode: 6vc76U8J",
+      location: "Online",
+      url: "https://teams.microsoft.com/meet/483894205755905?p=pJEGqQdTNuEBaYTXes",
+      schedule: {
+        start: new Date("2026-12-01T19:30:00+11:00"),
+        end: new Date("2026-12-01T21:00:00+11:00"),
+      },
+    },
+    {
+      type: "one-off",
       title: "RCJNSW Annual General Meeting",
       description:
         "Annual General Meeting for RoboCup Junior NSW. NSW Chair: Karen Binns. Teachers and mentors who have participated as a mentor or volunteer are eligible to attend and vote. Google Meet: https://meet.google.com/wtu-swim-tan",
